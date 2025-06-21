@@ -1,9 +1,8 @@
 import streamlit as st
 
-agree = st.checkbox("I agree")
+st.title("Click the button to see the magic!")
 
-if agree:
-    st.write("Great!" + " You agreed!" + " Thank you!")
-else:
-    st.write("You didn't agree")
-    st.write("Please check the box if you agree.")
+st.checkbox("Click me to see the magic!", key="magic_checkbox")
+if st.session_state.get("magic_checkbox", False):
+    st.write("✨ The magic is here! ✨")    
+          
